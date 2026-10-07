@@ -1,0 +1,74 @@
+{
+  "mistakes": [
+    {
+      "id": "mistake-1",
+      "category": "Past Tense",
+      "incorrect": "Yesterday I am going market.",
+      "corrected": "Yesterday, I went to the market.",
+      "hindi_translation": "कल मैं बाज़ार गया था।",
+      "telugu_translation": "నిన్న నేను మార్కెట్‌కు వెళ్ళాను.",
+      "explanation": "'Yesterday' denotes completed past time. 'Am going' is present continuous. In English, we must use the simple past tense 'went' (past of 'go').",
+      "rule": "Time marker in the past (yesterday, last week, ago) requires Past Simple tense.",
+      "practice_question": "Yesterday I ___ to the office.",
+      "options": ["went", "go", "am going", "gone"],
+      "correct_answer": "went",
+      "hint": "Think of the past form of 'go'."
+    },
+    {
+      "id": "mistake-2",
+      "category": "Auxiliary Verbs (Did + Root)",
+      "incorrect": "Did you went there?",
+      "corrected": "Did you go there?",
+      "hindi_translation": "क्या तुम वहाँ गए थे?",
+      "telugu_translation": "నువ్వు అక్కడికి వెళ్ళావా?",
+      "explanation": "When 'did' is used as the auxiliary in a past question, the main verb must remain in its base/root form (V1). Never use 'went' after 'did'.",
+      "rule": "Did + subject + base verb (V1) (e.g. Did you see, Did you call).",
+      "practice_question": "Did you ___ him yesterday?",
+      "options": ["call", "called", "calling", "calls"],
+      "correct_answer": "call",
+      "hint": "'Did' already carries the past tense, so use the root verb."
+    },
+    {
+      "id": "mistake-3",
+      "category": "Stative Verbs (Having vs Have)",
+      "incorrect": "I am having two brothers.",
+      "corrected": "I have two brothers.",
+      "hindi_translation": "मेरे दो भाई हैं।",
+      "telugu_translation": "నాకు ఇద్దరు సోదరులు ఉన్నారు.",
+      "explanation": "In English, 'have' meaning possession or family relationship is a stative verb and is not used in continuous '-ing' form. 'Having' is used for actions like 'I am having lunch'.",
+      "rule": "Use 'I have' for possession, traits, and family relationships.",
+      "practice_question": "I ___ a car and a bike.",
+      "options": ["have", "am having", "having", "has"],
+      "correct_answer": "have",
+      "hint": "Possession uses simple 'have' with 'I'."
+    },
+    {
+      "id": "mistake-4",
+      "category": "Prepositions (Discuss About)",
+      "incorrect": "We will discuss about the project tomorrow.",
+      "corrected": "We will discuss the project tomorrow.",
+      "hindi_translation": "हम कल प्रोजेक्ट पर चर्चा करेंगे।",
+      "telugu_translation": "మేము రేపు ప్రాజెక్ట్ గురించి చర్చిస్తాము.",
+      "explanation": "'Discuss' is a transitive verb that directly takes an object. Adding 'about' after 'discuss' is a common redundant Indian English habit.",
+      "rule": "Discuss + object (Do NOT use 'about' with discuss).",
+      "practice_question": "Let's discuss ___ problem.",
+      "options": ["the", "about the", "on the", "with the"],
+      "correct_answer": "the",
+      "hint": "'Discuss' already incorporates the meaning of 'talk about'."
+    },
+    {
+      "id": "mistake-5",
+      "category": "Since vs For",
+      "incorrect": "I am waiting here since 2 hours.",
+      "corrected": "I have been waiting here for 2 hours.",
+      "hindi_translation": "मैं यहाँ 2 घंटे से इंतज़ार कर रहा हूँ।",
+      "telugu_translation": "నేను ఇక్కడ 2 గంటల నుండి వేచి చూస్తున్నాను.",
+      "explanation": "Use 'for' with a duration of time (2 hours, 5 days, 3 years). Use 'since' with a specific starting point (since morning, since 9 AM, since Monday). Also, use 'have been waiting' for ongoing duration.",
+      "rule": "For + duration; Since + starting point in time.",
+      "practice_question": "She has been living here ___ 2020.",
+      "options": ["since", "for", "from", "by"],
+      "correct_answer": "since",
+      "hint": "2020 is a specific starting year, not a duration."
+    }
+  ]
+}

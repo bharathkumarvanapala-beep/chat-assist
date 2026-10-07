@@ -1,0 +1,20 @@
+{
+  "language": "te",
+  "name": "Telugu",
+  "words": [
+    { "word": "నిజానికి", "transliteration": "nijaanki", "pos": "adverb", "frequency_rank": 1, "category": "Conversational" },
+    { "word": "బహుశా", "transliteration": "bahushaa", "pos": "adverb", "frequency_rank": 2, "category": "Conversational" },
+    { "word": "సమావేశం / మీటింగ్", "transliteration": "samavesham / meeting", "pos": "noun", "frequency_rank": 3, "category": "Work" },
+    { "word": "రేపు / నిన్న", "transliteration": "repu / ninna", "pos": "noun/adverb", "frequency_rank": 4, "category": "Time" },
+    { "word": "ఖాళీగా", "transliteration": "khaaligaa", "pos": "adjective", "frequency_rank": 5, "category": "Status" },
+    { "word": "అత్యవసరం", "transliteration": "atyavasaram", "pos": "adjective", "frequency_rank": 6, "category": "Work" },
+    { "word": "కాల్ / ఫోన్", "transliteration": "call / phone", "pos": "verb/noun", "frequency_rank": 7, "category": "Communication" },
+    { "word": "సందేశం", "transliteration": "sandesham", "pos": "noun/verb", "frequency_rank": 8, "category": "Communication" },
+    { "word": "ధన్యవాదాలు", "transliteration": "dhanyavaadaalu", "pos": "interjection", "frequency_rank": 9, "category": "Greetings" },
+    { "word": "దయచేసి", "transliteration": "dayachesi", "pos": "adverb", "frequency_rank": 10, "category": "Politeness" },
+    { "word": "చేరుకోవడం", "transliteration": "cherukovadam", "pos": "verb", "frequency_rank": 11, "category": "Travel" },
+    { "word": "ఆగడం / వేచి ఉండడం", "transliteration": "aagadam / vechi undadam", "pos": "verb", "frequency_rank": 12, "category": "Action" },
+    { "word": "పంపడం", "transliteration": "pampadam", "pos": "verb", "frequency_rank": 13, "category": "Action" },
+    { "word": "సహాయం", "transliteration": "sahaayam", "pos": "noun", "frequency_rank": 14, "category": "Support" }
+  ]
+}

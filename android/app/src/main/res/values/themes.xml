@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.HindiAssist" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/day_accent</item>
+        <item name="android:statusBarColor">@color/day_background</item>
+        <item name="android:navigationBarColor">@color/day_background</item>
+    </style>
+</resources>

@@ -1,0 +1,20 @@
+{
+  "language": "hi",
+  "name": "Hindi",
+  "words": [
+    { "word": "असल में", "transliteration": "asal mein", "pos": "adverb", "frequency_rank": 1, "category": "Conversational" },
+    { "word": "शायद", "transliteration": "shaayad", "pos": "adverb", "frequency_rank": 2, "category": "Conversational" },
+    { "word": "मीटिंग", "transliteration": "meeting", "pos": "noun", "frequency_rank": 3, "category": "Work" },
+    { "word": "कल", "transliteration": "kal", "pos": "noun/adverb", "frequency_rank": 4, "category": "Time" },
+    { "word": "फ्री", "transliteration": "free", "pos": "adjective", "frequency_rank": 5, "category": "Status" },
+    { "word": "ज़रूरी", "transliteration": "zaroori", "pos": "adjective", "frequency_rank": 6, "category": "Work" },
+    { "word": "कॉल", "transliteration": "call", "pos": "verb/noun", "frequency_rank": 7, "category": "Communication" },
+    { "word": "मैसेज", "transliteration": "message", "pos": "noun/verb", "frequency_rank": 8, "category": "Communication" },
+    { "word": "धन्यवाद / शुक्रिया", "transliteration": "dhanyavaad / shukriya", "pos": "interjection", "frequency_rank": 9, "category": "Greetings" },
+    { "word": "कृपया / प्लीज", "transliteration": "kripya / please", "pos": "adverb", "frequency_rank": 10, "category": "Politeness" },
+    { "word": "पहुँचना", "transliteration": "pahonchna", "pos": "verb", "frequency_rank": 11, "category": "Travel" },
+    { "word": "रुकना / इंतज़ार", "transliteration": "rukna / intezaar", "pos": "verb", "frequency_rank": 12, "category": "Action" },
+    { "word": "भेजना", "transliteration": "bhejna", "pos": "verb", "frequency_rank": 13, "category": "Action" },
+    { "word": "मदद", "transliteration": "madad", "pos": "noun", "frequency_rank": 14, "category": "Support" }
+  ]
+}

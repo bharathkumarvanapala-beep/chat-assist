@@ -1,0 +1,94 @@
+{
+  "roleplays": [
+    {
+      "id": "scenario-friend",
+      "title": "Catching Up With a Friend",
+      "icon": "👋",
+      "category": "Daily Life",
+      "difficulty": "Beginner",
+      "description": "Casual conversation asking how your friend is doing, weekend plans, and catching up over coffee.",
+      "initial_message_en": "Hey! Long time no see! How have you been?",
+      "initial_message_hi": "अरे! बहुत दिनों बाद मिले! तुम कैसे हो सब कैसा चल रहा है?",
+      "initial_message_te": "హే! చాలా రోజులైంది చూసి! ఎలా ఉన్నావు?",
+      "expected_topics": ["health", "weekend", "work", "plans"],
+      "suggested_replies_en": [
+        "I'm doing great! Just busy with work. How about you?",
+        "Everything is good! Are you free this weekend?",
+        "Hey! Yes, really long time. Let's catch up soon!"
+      ],
+      "learning_focus": "Casual greeting, using 'how have you been', friendly tones."
+    },
+    {
+      "id": "scenario-shop",
+      "title": "At a Grocery or Tech Shop",
+      "icon": "🛒",
+      "category": "Shopping",
+      "difficulty": "Elementary",
+      "description": "Asking about product availability, prices, discounts, and payment methods.",
+      "initial_message_en": "Hello! Welcome to our store. Are you looking for anything specific today?",
+      "initial_message_hi": "नमस्ते! हमारी दुकान में आपका स्वागत है। क्या आप आज कुछ खास ढूँढ रहे हैं?",
+      "initial_message_te": "నమస్కారం! మా దుకాణానికి స్వాగతం. మీరు ఏదైనా ప్రత్యేకంగా చూస్తున్నారా?",
+      "expected_topics": ["price", "discount", "sizes", "payment"],
+      "suggested_replies_en": [
+        "Yes, do you have this item in stock?",
+        "How much does this cost? Is there any discount?",
+        "Do you accept UPI or card payment?"
+      ],
+      "learning_focus": "Polite shopping inquiries, asking prices, payment methods."
+    },
+    {
+      "id": "scenario-work",
+      "title": "Work Meeting & Project Update",
+      "icon": "💼",
+      "category": "Work",
+      "difficulty": "Intermediate",
+      "description": "Discussing project progress, deadlines, file sharing, and next steps with a colleague or manager.",
+      "initial_message_en": "Good morning! Can you give a quick update on where we stand with the presentation?",
+      "initial_message_hi": "सुप्रभात! क्या आप प्रेजेंटेशन की वर्तमान स्थिति के बारे में संक्षेप में बता सकते हैं?",
+      "initial_message_te": "శుభోదయం! ప్రజంటేషన్ ఏ దశలో ఉందో సంక్షిప్తంగా చెప్పగలరా?",
+      "expected_topics": ["deadline", "slides", "review", "email"],
+      "suggested_replies_en": [
+        "Good morning! I have completed the initial draft and sent the file to your email.",
+        "Almost done, just finalizing the metrics slides. I'll share it by 2 PM.",
+        "Could we do a quick 5-minute review call before sending it to the client?"
+      ],
+      "learning_focus": "Professional tone, work deadlines, scheduling follow-ups."
+    },
+    {
+      "id": "scenario-directions",
+      "title": "Asking for Directions",
+      "icon": "🗺️",
+      "category": "Travel",
+      "difficulty": "Beginner",
+      "description": "Asking a passerby for directions to the metro station or landmark.",
+      "initial_message_en": "Excuse me! Could you tell me where the nearest metro station is?",
+      "initial_message_hi": "एक्सक्यूज़ मी! क्या आप बता सकते हैं कि पास का मेट्रो स्टेशन कहाँ है?",
+      "initial_message_te": "నమస్కారం! దగ్గరలోని మెట్రో స్టేషన్ ఎక్కడ ఉందో చెప్పగలరా?",
+      "expected_topics": ["turn left", "straight", "distance", "minutes"],
+      "suggested_replies_en": [
+        "Go straight for 200 meters and take the first right turn.",
+        "Is it within walking distance or should I take an auto?",
+        "Thank you so much for your help!"
+      ],
+      "learning_focus": "Spatial prepositions, polite requests with 'Excuse me'."
+    },
+    {
+      "id": "scenario-interview",
+      "title": "Job Interview Practice",
+      "icon": "🎯",
+      "category": "Interview",
+      "difficulty": "Upper Intermediate",
+      "description": "Answering common interview questions like self-introduction, strengths, and experience.",
+      "initial_message_en": "Welcome to the interview! To start off, could you briefly introduce yourself and your background?",
+      "initial_message_hi": "साक्षात्कार में आपका स्वागत है! शुरुआत के लिए, क्या आप अपना और अपनी पृष्ठभूमि का संक्षेप में परिचय दे सकते हैं?",
+      "initial_message_te": "ఇంటర్వ్యూకి స్వాగతం! ప్రారంభించడానికి, మీ గురించి మరియు మీ నేపథ్యం గురించి సంక్షిప్తంగా పరిచయం చేయగలరా?",
+      "expected_topics": ["experience", "skills", "projects", "education"],
+      "suggested_replies_en": [
+        "Thank you. I have over three years of experience building responsive web and mobile applications.",
+        "I specialize in frontend technologies and cross-cultural communication tools.",
+        "I graduated in computer science and enjoy creating accessible software."
+      ],
+      "learning_focus": "Formal professional self-introduction, active verbs, concise articulation."
+    }
+  ]
+}

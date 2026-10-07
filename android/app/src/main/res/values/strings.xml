@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hindi Assist</string>
+    <string name="tagline">Understand every message. Reply naturally.</string>
+    <string name="secondary_tagline">English • Hindi • Telugu</string>
+    <string name="keyboard_name">Hindi Assist Keyboard</string>
+    <string name="subtype_en">English (India)</string>
+    <string name="subtype_hi">Hindi (हिन्दी)</string>
+    <string name="subtype_te">Telugu (తెలుగు)</string>
+
+    <string name="title_settings">Settings</string>
+    <string name="title_privacy_center">Privacy Center</string>
+    <string name="title_history">Translation History</string>
+
+    <!-- Keyboard Toolbar -->
+    <string name="btn_en_to_hi">EN → HI</string>
+    <string name="btn_hi_to_en">HI → EN</string>
+    <string name="btn_te_to_hi">TE → HI</string>
+    <string name="btn_hi_to_te">HI → TE</string>
+    <string name="btn_auto">AUTO</string>
+    <string name="btn_clipboard">📋 Clipboard</string>
+    <string name="btn_translate">Translate</string>
+    <string name="btn_insert">Insert</string>
+    <string name="btn_copy">Copy</string>
+    <string name="btn_theme">Theme</string>
+    <string name="btn_switch_keyboard">⌨ Switch</string>
+
+    <!-- Privacy & Status Labels -->
+    <string name="status_on_device">📱 On-device</string>
+    <string name="status_cloud_ai">☁ Cloud AI</string>
+    <string name="privacy_password_detected">🔒 Sensitive input detected. Translation assistant disabled.</string>
+    <string name="privacy_guarantee">Private by default. Never logs keystrokes, never intercepts private messages.</string>
+</resources>
