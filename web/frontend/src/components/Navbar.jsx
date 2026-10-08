@@ -12,8 +12,9 @@ export default function Navbar({
   setMobileMenuOpen
 }) {
   const themes = ['Day', 'Night', 'Blue', 'Green', 'Reading'];
-  const isGeminiReady = backendHealth?.orchestrator?.geminiAvailable === true;
-  const isCloudActive = Boolean(settings.cloudAiEnabled && isGeminiReady);
+  const isGeminiReady = backendHealth?.orchestrator?.geminiAvailable === true || backendHealth?.gemini_status === 'ACTIVE';
+  const isCloudEnabled = settings?.cloudAiEnabled !== false;
+  const isCloudActive = Boolean(isCloudEnabled && (backendHealth ? isGeminiReady : true));
 
   return (
     <header style={{

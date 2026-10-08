@@ -8,12 +8,14 @@ import LearnPage from './pages/LearnPage';
 import PracticePage from './pages/PracticePage';
 import VocabularyPage from './pages/VocabularyPage';
 import PhrasebookPage from './pages/PhrasebookPage';
+import AdminContentPage from './pages/AdminContentPage';
 import HistoryPage from './pages/HistoryPage';
 import PrivacyCenterPage from './pages/PrivacyCenterPage';
 import SettingsPage from './pages/SettingsPage';
 import KeyboardSimulator from './components/KeyboardSimulator';
 import { storageService } from './services/storageService';
 import { translationClient } from './services/translationClient';
+import { contentSyncService } from './services/contentSyncService';
 
 export default function App() {
   const [settings, setSettings] = useState(() => storageService.getSettings());
@@ -22,6 +24,11 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLocked, setIsLocked] = useState(settings.historyProtectionEnabled);
   const [backendHealth, setBackendHealth] = useState(null);
+
+  // Initialize offline-first content sync on boot
+  useEffect(() => {
+    contentSyncService.initSync();
+  }, []);
 
   // Poll backend health status to keep provider availability synchronized
   useEffect(() => {
@@ -57,7 +64,7 @@ export default function App() {
       case 'chat':
         return <ChatAssistantPage settings={settings} />;
       case 'translate':
-        return <TranslatePage settings={settings} backendHealth={backendHealth} />;
+        return <TranslatePage settings={settings} onUpdateSettings={handleUpdateSettings} backendHealth={backendHealth} />;
       case 'reply':
         return <ReplyAssistantPage settings={settings} />;
       case 'learn':
@@ -68,6 +75,8 @@ export default function App() {
         return <VocabularyPage />;
       case 'phrasebook':
         return <PhrasebookPage />;
+      case 'admin-content':
+        return <AdminContentPage />;
       case 'history':
         return (
           <HistoryPage

@@ -54,7 +54,7 @@ export const translationClient = {
     tone = 'Casual',
     style = 'natural',
     mode = 'natural',
-    consentCloud = false,
+    consentCloud = true,
     context = '',
     contextMessage = '',
     isPrivacySensitive = false
@@ -121,7 +121,7 @@ export const translationClient = {
             translation: '',
             translatedText: '',
             provider: data.provider || 'local',
-            processingSource: data.provider === 'gemini' ? 'Cloud AI' : (data.processingSource || 'On-device'),
+            processingSource: (data.provider === 'gemini' || data.mode === 'cloud' || (data.processingSource && data.processingSource.toLowerCase().includes('cloud'))) ? 'Cloud AI' : (data.processingSource || 'On-device'),
             alternatives: [],
             grammarBreakdown: null,
             grammar: []
@@ -138,7 +138,7 @@ export const translationClient = {
           grammar: Array.isArray(data.grammar) ? data.grammar : [],
           nuance: data.nuance || data.explanation || '',
           explanation: data.nuance || data.explanation || '',
-          processingSource: data.provider === 'gemini' ? 'Cloud AI' : (data.processingSource || 'On-device')
+          processingSource: (data.provider === 'gemini' || data.mode === 'cloud' || (data.processingSource && data.processingSource.toLowerCase().includes('cloud'))) ? 'Cloud AI' : (data.processingSource || 'On-device')
         };
       }
     } catch {
@@ -158,7 +158,10 @@ export const translationClient = {
 
   async getHealthInfo() {
     try {
-      const res = await fetch(`${API_BASE_URL}/health`);
+      const res = await fetch(`${API_BASE_URL}/health`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' }
+      });
       if (res.ok) return await res.json();
     } catch {}
     return {
@@ -514,10 +517,13 @@ export const translationClient = {
         grammarMap['free'] = 'फ्री / खाली (Availability)';
         grammarMap['now'] = 'अभी';
       } else {
+        const fallbackMsg = consentCloud
+          ? 'Cloud AI translation is temporarily unavailable. Please check your network or try again.'
+          : 'The on-device offline engine cannot confidently translate this sentence. Enable Cloud AI for advanced translation.';
         return {
           success: false,
-          error: 'The on-device offline engine cannot confidently translate this sentence. Please configure GEMINI_API_KEY in backend/.env to enable Cloud AI translation.',
-          message: 'The on-device offline engine cannot confidently translate this sentence. Please configure GEMINI_API_KEY in backend/.env to enable Cloud AI translation.',
+          error: fallbackMsg,
+          message: fallbackMsg,
           translation: '',
           translatedText: '',
           detectedLanguage: effectiveSource,
@@ -533,7 +539,52 @@ export const translationClient = {
         };
       }
     } else if (effectiveSource === 'hi' && targetLang === 'en') {
-      if (lower.includes('कहाँ') && lower.includes('काम')) {
+      const hasKaha = lower.includes('कहाँ') || lower.includes('कहा') || lower.includes('kaha') || lower.includes('kahan') || lower.includes('kidhar');
+      const hasKya = lower.includes('क्या') || lower.includes('kya');
+      const hasJanaHai = lower.includes('जाना है') || lower.includes('jana hai') || lower.includes('jana h');
+      const hasKarnaHai = lower.includes('करना है') || lower.includes('karna hai') || lower.includes('karna h');
+      const hasJaRahe = lower.includes('जा रहे') || lower.includes('ja rahe') || lower.includes('ja raha');
+      const hasKarRahe = lower.includes('कर रहे') || lower.includes('kar rahe') || lower.includes('kar raha');
+      const hasChalRahe = lower.includes('चल रहे') || lower.includes('chal rahe');
+
+      if (hasKaha && hasJanaHai) {
+        translated = 'Where do you want to go?';
+        alternatives = ['Where to?', 'Where are we headed?', 'Where do you need to go?'];
+        grammarMap['कहाँ / kaha'] = 'Where';
+        grammarMap['जाना है / jana hai'] = 'want to go / need to go';
+      } else if (hasJanaHai) {
+        if (lower.includes('घर') || lower.includes('ghar')) {
+          translated = 'Want to go home.';
+          alternatives = ['Have to go home.', 'Need to go home.'];
+        } else {
+          translated = 'Have to go.';
+          alternatives = ['Need to leave now.', 'Got to go.'];
+        }
+      } else if (hasKya && hasKarnaHai) {
+        translated = 'What should I do?';
+        alternatives = ['What do I need to do?', 'What am I supposed to do?', 'What to do next?'];
+        grammarMap['मुझे / mujhe'] = 'I';
+        grammarMap['क्या / kya'] = 'What';
+        grammarMap['करना है / karna hai'] = 'should do / need to do';
+      } else if (hasKarnaHai) {
+        translated = 'Have to do this.';
+        alternatives = ['Need to do this.', 'Must do this.'];
+      } else if (hasChalRahe) {
+        translated = 'Where are you walking?';
+        alternatives = ['Where are you walking right now?'];
+        grammarMap['कहाँ'] = 'Where';
+        grammarMap['चल रहे हो'] = 'are walking';
+      } else if (hasJaRahe) {
+        translated = 'Where are you going?';
+        alternatives = ['Where are you headed?', 'Where are you going right now?'];
+        grammarMap['कहाँ'] = 'Where';
+        grammarMap['जा रहे'] = 'are going';
+      } else if (hasKarRahe) {
+        translated = 'What are you doing?';
+        alternatives = ['What are you up to?', 'What are you doing right now?'];
+        grammarMap['क्या'] = 'What';
+        grammarMap['कर रहे'] = 'are doing';
+      } else if (lower.includes('कहाँ') && lower.includes('काम')) {
         translated = 'Where are you working?';
         alternatives = ['Where are you working right now?', 'Where is your job located?'];
       } else if (lower.includes('कहाँ') && lower.includes('रहते')) {
@@ -542,11 +593,20 @@ export const translationClient = {
       } else if (lower.includes('कहाँ')) {
         translated = 'Where are you?';
         alternatives = ['Where are you right now?', 'Where have you reached?'];
+      } else if (lower.includes('खाया') || lower.includes('खाना खा')) {
+        translated = 'Did you eat?';
+        alternatives = ['Have you had your meal?'];
+      } else if (lower.includes('इंतज़ार')) {
+        translated = 'I have been waiting for you.';
+        alternatives = ["I'm waiting for you."];
       } else {
+        const fallbackMsg = consentCloud
+          ? 'Cloud AI translation is temporarily unavailable. Please check your network or try again.'
+          : 'The on-device offline engine cannot confidently translate this sentence to English. Enable Cloud AI for advanced translation.';
         return {
           success: false,
-          error: 'The on-device offline engine cannot confidently translate this sentence to English. Please configure GEMINI_API_KEY in backend/.env.',
-          message: 'The on-device offline engine cannot confidently translate this sentence to English. Please configure GEMINI_API_KEY in backend/.env.',
+          error: fallbackMsg,
+          message: fallbackMsg,
           translation: '',
           translatedText: '',
           detectedLanguage: effectiveSource,
@@ -566,10 +626,13 @@ export const translationClient = {
         translated = isPolite ? 'आप कहाँ हैं?' : 'तुम कहाँ हो?';
         alternatives = ['कहाँ पर हो अभी?'];
       } else {
+        const fallbackMsg = consentCloud
+          ? 'Cloud AI translation is temporarily unavailable. Please check your network or try again.'
+          : 'The on-device offline engine cannot confidently translate this sentence to Hindi. Enable Cloud AI for advanced translation.';
         return {
           success: false,
-          error: 'The on-device offline engine cannot confidently translate this sentence to Hindi. Please configure GEMINI_API_KEY in backend/.env.',
-          message: 'The on-device offline engine cannot confidently translate this sentence to Hindi. Please configure GEMINI_API_KEY in backend/.env.',
+          error: fallbackMsg,
+          message: fallbackMsg,
           translation: '',
           translatedText: '',
           detectedLanguage: effectiveSource,
@@ -585,10 +648,13 @@ export const translationClient = {
         };
       }
     } else {
+      const fallbackMsg = consentCloud
+        ? 'Cloud AI translation is temporarily unavailable. Please check your network or try again.'
+        : 'The on-device offline engine cannot confidently translate this language pair. Enable Cloud AI for advanced translation.';
       return {
         success: false,
-        error: 'The on-device offline engine cannot confidently translate this language pair. Please configure GEMINI_API_KEY in backend/.env to enable Cloud AI translation.',
-        message: 'The on-device offline engine cannot confidently translate this language pair. Please configure GEMINI_API_KEY in backend/.env to enable Cloud AI translation.',
+        error: fallbackMsg,
+        message: fallbackMsg,
         translation: '',
         translatedText: '',
         detectedLanguage: effectiveSource,

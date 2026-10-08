@@ -2,6 +2,7 @@ import express from 'express';
 import { aiOrchestrator } from '../ai/aiOrchestrator.js';
 import { detectLanguage } from '../services/languageDetector.js';
 import { explainLearningTopic, generateConversationTurn } from '../services/translationService.js';
+import { db } from '../db/database.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -26,6 +27,7 @@ function safeReadJson(filename, key) {
  * Public health check and engine routing status
  */
 router.get('/health', (req, res) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   const orchestratorStatus = aiOrchestrator.getStatus();
   const isGeminiReady = orchestratorStatus.geminiAvailable;
 
@@ -307,16 +309,16 @@ router.post('/conversation-turn', async (req, res) => {
 });
 
 /**
- * Structured Language Resource Endpoints (Local Data)
+ * Structured Language Resource Endpoints (Local Data & Dynamic DB)
  */
 router.get('/vocabulary', (req, res) => {
-  const data = safeReadJson('vocabulary.json', 'vocabulary');
-  res.json({ engine: 'local-data', count: data.length, data });
+  const result = db.getVocabulary({ limit: 200 });
+  res.json({ engine: 'dynamic-db', count: result.items.length, data: result.items });
 });
 
 router.get('/phrases', (req, res) => {
-  const data = safeReadJson('phrases.json', 'phrases');
-  res.json({ engine: 'local-data', count: data.length, data });
+  const result = db.getPhrases({ limit: 200 });
+  res.json({ engine: 'dynamic-db', count: result.items.length, data: result.items });
 });
 
 router.get('/patterns', (req, res) => {

@@ -188,9 +188,28 @@ export class AiOrchestrator {
     });
 
     if (!localResult || localResult.success === false) {
+      let finalError = localResult?.error;
+      const isGeminiReady = this.gemini.isAvailable();
+
+      if (isGeminiReady) {
+        if (wasFallback) {
+          finalError = 'Cloud AI is temporarily unavailable, and the offline engine cannot confidently translate this sentence.';
+        } else if (userConsentCloud === false) {
+          finalError = 'The on-device offline engine cannot confidently translate this sentence. Enable Cloud AI in settings for advanced translation.';
+        } else {
+          finalError = 'The on-device offline engine cannot confidently translate this sentence.';
+        }
+      } else {
+        if (userConsentCloud === false) {
+          finalError = 'The on-device offline engine cannot confidently translate this sentence.';
+        } else {
+          finalError = localResult?.error || 'The on-device offline engine cannot confidently translate this sentence. Please configure GEMINI_API_KEY in backend/.env to enable Cloud AI translation.';
+        }
+      }
+
       return {
         success: false,
-        error: localResult?.error || 'The on-device offline engine cannot confidently translate this sentence. Please configure GEMINI_API_KEY in backend/.env to enable Cloud AI translation.',
+        error: finalError,
         translation: '',
         translatedText: '',
         alternatives: [],

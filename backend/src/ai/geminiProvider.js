@@ -30,6 +30,9 @@ export class GeminiProvider {
 
   _syncEnv() {
     try {
+      if ((process.env.NODE_ENV === 'test' || process.argv.some(a => a.includes('test'))) && process.env.GEMINI_API_KEY === undefined) {
+        return;
+      }
       if (fs.existsSync(ENV_PATH)) {
         const envContent = fs.readFileSync(ENV_PATH, 'utf8');
         const keyMatch = envContent.match(/^[ \t]*GEMINI_API_KEY[ \t]*=[ \t]*([^\r\n]*)/m);
@@ -84,12 +87,18 @@ export class GeminiProvider {
     const ai = this.getClient();
     if (!ai) throw new Error('Gemini API key is not configured.');
 
-    const candidateModels = [
-      process.env.GEMINI_MODEL || 'gemini-3.8-flash',
-      'gemini-2.5-flash',
-      'gemini-2.0-flash',
-      'gemini-1.5-flash'
+    const preferred = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
+    const fallbackList = [
+      preferred,
+      'gemini-3.6-flash',
+      'gemini-3.5-flash',
+      'gemini-3.5-flash-lite',
+      'gemini-3.8-flash',
+      'gemini-3.7-flash',
+      'gemini-flash-latest'
     ];
+    // Keep unique list
+    const candidateModels = [...new Set(fallbackList.filter(Boolean))];
 
     let lastError = null;
     for (const model of candidateModels) {
@@ -107,7 +116,16 @@ export class GeminiProvider {
           msg.includes('unsupported') ||
           msg.includes('404') ||
           msg.includes('not supported') ||
-          err.status === 404
+          msg.includes('quota') ||
+          msg.includes('rate') ||
+          msg.includes('resource_exhausted') ||
+          msg.includes('high demand') ||
+          msg.includes('unavailable') ||
+          msg.includes('overloaded') ||
+          err.status === 404 ||
+          err.status === 429 ||
+          err.status === 503 ||
+          err.status === 500
         ) {
           continue;
         }

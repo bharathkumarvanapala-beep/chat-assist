@@ -10,7 +10,8 @@ import {
   History,
   Shield,
   Settings,
-  Keyboard
+  Keyboard,
+  Sliders
 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab, mobileMenuOpen, setMobileMenuOpen }) {
@@ -22,6 +23,7 @@ export default function Sidebar({ activeTab, setActiveTab, mobileMenuOpen, setMo
     { id: 'practice', label: 'Practice & Quizzes', icon: Brain },
     { id: 'vocabulary', label: 'My Vocabulary', icon: BookA },
     { id: 'phrasebook', label: 'My Phrasebook', icon: Bookmark },
+    { id: 'admin-content', label: 'Content Manager', icon: Sliders, badge: 'Admin' },
     { id: 'history', label: 'History & Search', icon: History },
     { id: 'keyboard-sim', label: 'Android Keyboard', icon: Keyboard, badge: 'Demo' },
     { id: 'privacy', label: 'Privacy Center', icon: Shield },

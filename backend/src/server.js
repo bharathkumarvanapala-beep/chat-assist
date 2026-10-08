@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import apiRouter from './routes/api.js';
+import v1Router from './routes/v1/index.js';
 import { zeroLogPolicy, validateInputPayload } from './middleware/privacyMiddleware.js';
 
 dotenv.config();
@@ -12,11 +13,11 @@ const PORT = process.env.PORT || 5000;
 // Security & Privacy Configurations
 app.use(cors({
   origin: '*', // Allow frontend development server
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'x-cloud-consent']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-cloud-consent', 'x-admin-key']
 }));
 
-app.use(express.json({ limit: '100kb' })); // Restrict payload size
+app.use(express.json({ limit: '500kb' })); // Allow payloads for bulk import
 app.use(zeroLogPolicy); // Enforce zero logging of sensitive texts
 app.use(validateInputPayload); // Sanitize and check inputs
 
@@ -31,7 +32,8 @@ app.get('/', (req, res) => {
   });
 });
 
-// API Routes
+// API Routes (v1 REST endpoints and legacy routes)
+app.use('/api/v1', v1Router);
 app.use('/api', apiRouter);
 
 // 404 Handler

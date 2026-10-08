@@ -216,6 +216,7 @@ export class LocalProvider {
     let translation = '';
     let alternatives = [];
     const grammar = [];
+    let nuance = '';
 
     // DIRECTION 1: English -> Hindi (Complete Sentence Assembly)
     if (src === 'en' && tgt === 'hi') {
@@ -392,7 +393,7 @@ export class LocalProvider {
       else {
         return {
           success: false,
-          error: 'The on-device offline engine cannot confidently translate this sentence. Please configure GEMINI_API_KEY in backend/.env to enable Cloud AI translation.',
+          error: 'The on-device offline engine cannot confidently translate this sentence.',
           translation: '',
           alternatives: [],
           grammar: [],
@@ -429,7 +430,7 @@ export class LocalProvider {
       } else {
         return {
           success: false,
-          error: 'The on-device offline engine cannot confidently translate this sentence to Telugu. Please configure GEMINI_API_KEY in backend/.env.',
+          error: 'The on-device offline engine cannot confidently translate this sentence to Telugu.',
           translation: '',
           alternatives: [],
           grammar: [],
@@ -442,33 +443,69 @@ export class LocalProvider {
 
     // DIRECTION 3: Hindi -> English
     else if (src === 'hi' && tgt === 'en') {
-      if (lower.includes('चल रहे')) {
+      const hasKaha = lower.includes('कहाँ') || lower.includes('कहा') || lower.includes('kaha') || lower.includes('kahan') || lower.includes('kidhar');
+      const hasKya = lower.includes('क्या') || lower.includes('kya');
+      const hasJanaHai = lower.includes('जाना है') || lower.includes('jana hai') || lower.includes('jana h');
+      const hasKarnaHai = lower.includes('करना है') || lower.includes('karna hai') || lower.includes('karna h');
+      const hasJaRahe = lower.includes('जा रहे') || lower.includes('ja rahe') || lower.includes('ja raha');
+      const hasKarRahe = lower.includes('कर रहे') || lower.includes('kar rahe') || lower.includes('kar raha');
+      const hasChalRahe = lower.includes('चल रहे') || lower.includes('chal rahe');
+
+      if (hasKaha && hasJanaHai) {
+        translation = 'Where do you want to go?';
+        alternatives = ['Where to?', 'Where are we headed?', 'Where do you need to go?'];
+        grammar.push({ source: "कहाँ / kaha", target: "Where" });
+        grammar.push({ source: "जाना है / jana hai", target: "want to go / need to go" });
+        nuance = "Conversational Hindi infinitive asking about the intended destination.";
+      } else if (hasJanaHai) {
+        if (lower.includes('घर') || lower.includes('ghar')) {
+          translation = 'Want to go home.';
+          alternatives = ['Have to go home.', 'Need to go home.'];
+        } else {
+          translation = 'Have to go.';
+          alternatives = ['Need to leave now.', 'Got to go.'];
+        }
+      } else if (hasKya && hasKarnaHai) {
+        translation = 'What should I do?';
+        alternatives = ['What do I need to do?', 'What am I supposed to do?', 'What to do next?'];
+        grammar.push({ source: "मुझे / mujhe", target: "I" });
+        grammar.push({ source: "क्या / kya", target: "What" });
+        grammar.push({ source: "करना है / karna hai", target: "should do / need to do" });
+        nuance = "Conversational deliberation expressing query about the next necessary action.";
+      } else if (hasKarnaHai) {
+        translation = 'Have to do this.';
+        alternatives = ['Need to do this.', 'Must do this.'];
+      } else if (hasChalRahe) {
         translation = 'Where are you walking?';
         alternatives = ['Where are you walking right now?'];
         grammar.push({ source: "कहाँ", target: "Where" });
         grammar.push({ source: "चल रहे हो", target: "are walking" });
-      } else if (lower.includes('जा रहे')) {
+      } else if (hasJaRahe) {
         translation = 'Where are you going?';
-        alternatives = ['Where are you headed?'];
-      } else if (lower.includes('काम कर')) {
+        alternatives = ['Where are you headed?', 'Where are you going right now?'];
+        grammar.push({ source: "कहाँ", target: "Where" });
+        grammar.push({ source: "जा रहे", target: "are going" });
+      } else if (hasKarRahe) {
+        translation = 'What are you doing?';
+        alternatives = ['What are you up to?', 'What are you doing right now?'];
+        grammar.push({ source: "क्या", target: "What" });
+        grammar.push({ source: "कर रहे", target: "are doing" });
+      } else if (lower.includes('काम कर') || lower.includes('kaam kar')) {
         translation = 'Where are you working?';
         alternatives = ['Where is your job located?'];
-      } else if (lower.includes('कर रहे')) {
-        translation = 'What are you doing?';
-        alternatives = ['What are you up to?'];
-      } else if (lower.includes('खाया') || lower.includes('खाना खा')) {
+      } else if (lower.includes('खाया') || lower.includes('खाना खा') || lower.includes('khaya')) {
         translation = 'Did you eat?';
         alternatives = ['Have you had your meal?'];
-      } else if (lower.includes('कल') && lower.includes('कॉल')) {
+      } else if ((lower.includes('कल') || lower.includes('kal')) && (lower.includes('कॉल') || lower.includes('call') || lower.includes('phone'))) {
         translation = 'I will call you tomorrow.';
         alternatives = ["I'll call you tomorrow."];
-      } else if (lower.includes('इंतज़ार')) {
+      } else if (lower.includes('इंतज़ार') || lower.includes('intezaar') || lower.includes('intezar')) {
         translation = 'I have been waiting for you.';
         alternatives = ["I'm waiting for you."];
       } else {
         return {
           success: false,
-          error: 'The on-device offline engine cannot confidently translate this sentence to English. Please configure GEMINI_API_KEY in backend/.env.',
+          error: 'The on-device offline engine cannot confidently translate this sentence to English.',
           translation: '',
           alternatives: [],
           grammar: [],
@@ -499,7 +536,7 @@ export class LocalProvider {
       } else {
         return {
           success: false,
-          error: 'The on-device offline engine cannot confidently translate this sentence to Hindi. Please configure GEMINI_API_KEY in backend/.env.',
+          error: 'The on-device offline engine cannot confidently translate this sentence to Hindi.',
           translation: '',
           alternatives: [],
           grammar: [],
@@ -528,7 +565,9 @@ export class LocalProvider {
       });
     }
 
-    const nuance = `Complete conversational sentence translation in ${tone} tone with Subject-Object-Verb (SOV) order.`;
+    if (!nuance) {
+      nuance = `Complete conversational sentence translation in ${tone} tone with Subject-Object-Verb (SOV) order.`;
+    }
 
     return {
       success: true,

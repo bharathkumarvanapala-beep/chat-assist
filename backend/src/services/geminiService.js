@@ -321,6 +321,48 @@ Return ONLY a valid JSON object:
       return null;
     }
   }
+
+  /**
+   * 6. Dictionary Word Lookup via Gemini
+   */
+  async lookupDictionaryWord(word) {
+    const ai = this.client;
+    if (!ai) return null;
+
+    try {
+      const prompt = `You are Hindi Assist Offline Dictionary Engine.
+Create a rich, verified dictionary entry for the word: "${word}".
+Languages needed: English, Hindi, and Telugu.
+Return ONLY a valid JSON object strictly matching this schema:
+{
+  "english": "${word.toLowerCase().trim()}",
+  "hindi": "natural Hindi translation and devanagari equivalents",
+  "telugu": "natural Telugu translation",
+  "transliteration": "Roman Hindi transliteration (e.g. yaad rakhna)",
+  "pronunciation": "phonetic pronunciation (e.g. ri-mem-ber)",
+  "definition": "clear, concise definition of the word",
+  "exampleEnglish": "natural conversational example sentence in English",
+  "exampleHindi": "Hindi translation of the example sentence",
+  "exampleTelugu": "Telugu translation of the example sentence",
+  "category": "Daily Life",
+  "tags": ["dictionary", "vocabulary"]
+}`;
+
+      const res = await ai.models.generateContent({
+        model: this.modelName,
+        contents: prompt
+      });
+
+      const parsed = this.cleanJson(res.text);
+      return {
+        ...parsed,
+        source: 'gemini'
+      };
+    } catch (err) {
+      console.warn('[GeminiService] lookupDictionaryWord error:', err.message);
+      return null;
+    }
+  }
 }
 
 export const geminiService = new GeminiService();

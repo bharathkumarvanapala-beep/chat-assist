@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, Copy, ArrowRight, ShieldCheck, Lock, Smartphone, RefreshCw } from 'lucide-react';
 import { translationClient } from '../services/translationClient';
+import { transliterationService } from '../services/transliterationService';
 
 export default function KeyboardSimulator({ settings, theme, setTheme }) {
   // WhatsApp Simulated State
@@ -50,13 +51,21 @@ export default function KeyboardSimulator({ settings, theme, setTheme }) {
     if (isSensitiveField || !typedBuffer.trim()) return;
     setIsTranslating(true);
     const active = directions.find(d => d.label === activeDirection) || directions[1];
+    let textToTranslate = typedBuffer.trim();
+    if (active.src === 'hi' && transliterationService.isRomanHindi(textToTranslate)) {
+      const transliterated = transliterationService.transliterateSentence(textToTranslate).primary;
+      if (transliterated) {
+        textToTranslate = transliterated;
+        setTypedBuffer(transliterated);
+      }
+    }
     const res = await translationClient.translate({
-      text: typedBuffer,
+      text: textToTranslate,
       sourceLang: active.src,
       targetLang: active.tgt,
       tone
     });
-    setKeyboardTranslation(res.translatedText);
+    setKeyboardTranslation(res.translatedText || res.translation);
     setIsTranslating(false);
   };
 
@@ -390,10 +399,33 @@ export default function KeyboardSimulator({ settings, theme, setTheme }) {
               </div>
 
               {/* Typing Simulator for Keyboard */}
+              {activeDirection.startsWith('HI') && typedBuffer.trim() && transliterationService.isRomanHindi(typedBuffer) && (
+                <div style={{ display: 'flex', gap: '6px', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '0.72rem', color: '#10b981', fontWeight: 600 }}>⚡ Transliteration:</span>
+                  {transliterationService.transliterateSentence(typedBuffer).all.slice(0, 3).map((sug, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setTypedBuffer(sug)}
+                      style={{
+                        background: 'var(--bg-secondary)',
+                        border: '1px solid var(--border-subtle)',
+                        borderRadius: 'var(--radius-sm)',
+                        padding: '2px 8px',
+                        fontSize: '0.78rem',
+                        color: 'var(--text-primary)',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      {sug}
+                    </button>
+                  ))}
+                </div>
+              )}
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <input
                   type="text"
-                  placeholder="Type Hindi reply here (e.g. मैं अभी घर पर हूँ / कल थोड़ा काम था)..."
+                  placeholder="Type Hindi reply here (e.g. kaha jana hai / मैं अभी घर पर हूँ)..."
                   value={typedBuffer}
                   onChange={(e) => setTypedBuffer(e.target.value)}
                   style={{
