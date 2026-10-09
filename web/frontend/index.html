@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description"
+    content="Hindi Assist — Privacy-first multilingual translation, WhatsApp communication assistance, and language learning platform for English, Hindi, and Telugu." />
+  <meta name="theme-color" content="#4F46E5" />
+  <title>Hindi Assist — Understand every message. Reply naturally.</title>
+
+  <!-- Modern Typography: Inter & Outfit -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Rozha+One&display=swap"
+    rel="stylesheet" />
+
+  <!-- PWA Manifest & App Icons -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => { });
+      });
+    }
+  </script>
+</body>
+
+</html>

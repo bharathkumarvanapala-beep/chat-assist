@@ -1,0 +1,212 @@
+[
+  {
+    "id": "phrase-1",
+    "english": "Where are you?",
+    "hindi": "तुम कहाँ हो?",
+    "telugu": "నువ్వు ఎక్కడ ఉన్నావు?",
+    "transliteration": "tum kaha ho?",
+    "pronunciation": "tum kuh-haan ho?",
+    "categoryId": "cat-friends",
+    "category": "Friends",
+    "note": "Common friendly check-in. Use 'आप कहाँ हैं?' with elders or mentors.",
+    "tags": [
+      "location",
+      "check-in",
+      "casual"
+    ],
+    "isActive": true,
+    "sortOrder": 1,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-2",
+    "english": "Are you free now?",
+    "hindi": "क्या तुम अभी फ्री हो?",
+    "telugu": "నువ్వు ఇప్పుడు ఖాళీగా ఉన్నావా?",
+    "transliteration": "kya tum abhi free ho?",
+    "pronunciation": "kyaa tum ub-hee free ho?",
+    "categoryId": "cat-friends",
+    "category": "Friends",
+    "note": "Modern conversational check before initiating a call or chat. 'फ्री' is standard.",
+    "tags": [
+      "availability",
+      "check-in",
+      "friends"
+    ],
+    "isActive": true,
+    "sortOrder": 2,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:12:52.810Z",
+    "version": 3
+  },
+  {
+    "id": "phrase-3",
+    "english": "I am at home right now.",
+    "hindi": "मैं अभी घर पर हूँ।",
+    "telugu": "నేను ఇప్పుడు ఇంట్లోనే ఉన్నాను.",
+    "transliteration": "main abhi ghar par hoon.",
+    "pronunciation": "main ub-hee ghur pur hoon.",
+    "categoryId": "cat-replies",
+    "category": "Common Replies",
+    "note": "Direct SOV reply for current status inquiries.",
+    "tags": [
+      "status",
+      "home",
+      "reply"
+    ],
+    "isActive": true,
+    "sortOrder": 3,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-4",
+    "english": "Why didn't you come yesterday?",
+    "hindi": "तुम कल क्यों नहीं आए?",
+    "telugu": "నువ్వు నిన్న ఎందుకు రాలేదు?",
+    "transliteration": "tum kal kyon nahi aaye?",
+    "pronunciation": "tum kul kyohn nuh-heen aa-yay?",
+    "categoryId": "cat-friends",
+    "category": "Friends",
+    "note": "Notice 'कल' stands for yesterday here because of past verb 'आए'.",
+    "tags": [
+      "question",
+      "friends",
+      "past"
+    ],
+    "isActive": true,
+    "sortOrder": 4,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-5",
+    "english": "Take care and keep in touch.",
+    "hindi": "अपना ख्याल रखना और संपर्क में रहना।",
+    "telugu": "జాగ్రత్తగా ఉండు మరియు టచ్‌లో ఉండు.",
+    "transliteration": "apna khyaal rakhna aur sampark mein rehna.",
+    "pronunciation": "up-naa khyaal rukh-naa...",
+    "categoryId": "cat-greetings",
+    "category": "Greetings",
+    "note": "Warm farewell ending a positive conversation.",
+    "tags": [
+      "farewell",
+      "greetings",
+      "polite"
+    ],
+    "isActive": true,
+    "sortOrder": 5,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-6",
+    "english": "I will call you tomorrow morning.",
+    "hindi": "मैं तुम्हें कल सुबह कॉल करूँगा।",
+    "telugu": "నేను రేపు ఉదయం మీకు కాల్ చేస్తాను.",
+    "transliteration": "main tumhe kal subah call karoonga.",
+    "pronunciation": "main tum-hein kul soo-buh call kuroon-gaa.",
+    "categoryId": "cat-work",
+    "category": "Work",
+    "note": "Professional commitment for upcoming phone conversation.",
+    "tags": [
+      "work",
+      "call",
+      "schedule"
+    ],
+    "isActive": true,
+    "sortOrder": 6,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-7",
+    "english": "How is everyone at home?",
+    "hindi": "घर पर सब कैसे हैं?",
+    "telugu": "ఇంట్లో అందరూ ఎలా ఉన్నారు?",
+    "transliteration": "ghar par sab kaise hain?",
+    "pronunciation": "ghur pur sub kai-say hain?",
+    "categoryId": "cat-family",
+    "category": "Family",
+    "note": "Extremely common polite inquiry in Indian cultural conversations.",
+    "tags": [
+      "family",
+      "polite",
+      "care"
+    ],
+    "isActive": true,
+    "sortOrder": 7,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-8",
+    "english": "I will reach in 10 minutes.",
+    "hindi": "मैं 10 मिनट में पहुँचूँगा।",
+    "telugu": "నేను 10 నిమిషాల్లో చేరుకుంటాను.",
+    "transliteration": "main 10 minute mein pahonchunga.",
+    "pronunciation": "main dus mi-nut mein puh-hunch-oon-gaa.",
+    "categoryId": "cat-travel",
+    "category": "Travel",
+    "note": "Transit ETA update widely used in WhatsApp chats.",
+    "tags": [
+      "travel",
+      "eta",
+      "transit"
+    ],
+    "isActive": true,
+    "sortOrder": 8,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-9",
+    "english": "Please send the file as soon as possible.",
+    "hindi": "कृपया फाइल जल्द से जल्द भेज दीजिए।",
+    "telugu": "దయచేసి వీలైనంత త్వరగా ఫైల్ పంపండి.",
+    "transliteration": "kripya file jald se jald bhej deejiye.",
+    "pronunciation": "krip-yaa file juld say juld bhayj dee-jee-yay.",
+    "categoryId": "cat-important",
+    "category": "Important",
+    "note": "Polite yet urgent workplace request.",
+    "tags": [
+      "work",
+      "important",
+      "urgent"
+    ],
+    "isActive": true,
+    "sortOrder": 9,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "phrase-10",
+    "english": "No problem at all, don't worry.",
+    "hindi": "कोई बात नहीं, चिंता मत करो।",
+    "telugu": "ఏం పర్వాలేదు, కంగారు పడకు.",
+    "transliteration": "koi baat nahi, chinta mat karo.",
+    "pronunciation": "koy baat nuh-heen, chin-taa mut kuh-ro.",
+    "categoryId": "cat-replies",
+    "category": "Common Replies",
+    "note": "Reassuring reply to ease concern.",
+    "tags": [
+      "reply",
+      "comfort",
+      "reassurance"
+    ],
+    "isActive": true,
+    "sortOrder": 10,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-01T00:00:00.000Z",
+    "version": 1
+  }
+]

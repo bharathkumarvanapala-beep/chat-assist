@@ -1,0 +1,27 @@
+{
+  "name": "hindi-assist-backend",
+  "version": "1.0.0",
+  "description": "Privacy-first backend service and translation abstraction for Hindi Assist",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.27.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "keywords": [
+    "hindi-assist",
+    "translation",
+    "privacy-first",
+    "multilingual",
+    "nlp"
+  ],
+  "author": "Hindi Assist Team",
+  "license": "Apache-2.0"
+}

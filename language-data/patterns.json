@@ -1,0 +1,94 @@
+{
+  "sentence_patterns": [
+    {
+      "id": "pattern-1",
+      "pattern": "I want to + [verb]",
+      "explanation": "Used to express a direct personal desire or intention.",
+      "hindi_formula": "मैं + [verb root] + ना चाहता हूँ / चाहती हूँ",
+      "telugu_formula": "నేను + [verb] + అనుకుంటున్నాను",
+      "examples": [
+        {
+          "english": "I want to learn English.",
+          "hindi": "मैं अंग्रेजी सीखना चाहता हूँ।",
+          "telugu": "నేను ఇంగ్లీష్ నేర్చుకోవాలనుకుంటున్నాను."
+        },
+        {
+          "english": "I want to go home.",
+          "hindi": "मैं घर जाना चाहता हूँ।",
+          "telugu": "నేను ఇంటికి వెళ్ళాలనుకుంటున్నాను."
+        },
+        {
+          "english": "I want to talk to you.",
+          "hindi": "मैं तुमसे बात करना चाहता हूँ।",
+          "telugu": "నేను నీతో మాట్లాడాలనుకుంటున్నాను."
+        }
+      ],
+      "practice_prompt": "Try building: 'I want to drink water.'"
+    },
+    {
+      "id": "pattern-2",
+      "pattern": "Can you please + [verb]?",
+      "explanation": "Polite request to ask someone to do an action.",
+      "hindi_formula": "क्या आप कृपया + [verb] + कर सकते हैं?",
+      "telugu_formula": "మీరు దయచేసి + [verb] + చేయగలరా?",
+      "examples": [
+        {
+          "english": "Can you please call me?",
+          "hindi": "क्या आप कृपया मुझे कॉल कर सकते हैं?",
+          "telugu": "మీరు దయచేసి నాకు కాల్ చేయగలరా?"
+        },
+        {
+          "english": "Can you please send the details?",
+          "hindi": "क्या आप कृपया डिटेल्स भेज सकते हैं?",
+          "telugu": "మీరు దయచేసి వివరాలు పంపగలరా?"
+        },
+        {
+          "english": "Can you please wait for 5 minutes?",
+          "hindi": "क्या आप कृपया 5 मिनट इंतज़ार कर सकते हैं?",
+          "telugu": "మీరు దయచేసి 5 నిమిషాలు వేచి ఉండగలరా?"
+        }
+      ],
+      "practice_prompt": "Try building: 'Can you please help me?'"
+    },
+    {
+      "id": "pattern-3",
+      "pattern": "I have been [verb-ing] for [time duration]",
+      "explanation": "Present perfect continuous: actions that started in the past and continue into the present moment.",
+      "hindi_formula": "मैं + [time] + से + [verb] + कर रहा हूँ",
+      "telugu_formula": "నేను + [time] + నుండి + [verb] + చేస్తున్నాను",
+      "examples": [
+        {
+          "english": "I have been working here for two years.",
+          "hindi": "मैं यहाँ दो साल से काम कर रहा हूँ।",
+          "telugu": "నేను ఇక్కడ రెండు సంవత్సరాల నుండి పనిచేస్తున్నాను."
+        },
+        {
+          "english": "I have been waiting for 30 minutes.",
+          "hindi": "मैं 30 मिनट से इंतज़ार कर रहा हूँ।",
+          "telugu": "నేను 30 నిమిషాల నుండి వేచి చూస్తున్నాను."
+        }
+      ],
+      "practice_prompt": "Try building: 'I have been studying since morning.'"
+    },
+    {
+      "id": "pattern-4",
+      "pattern": "Are you ready to + [verb]?",
+      "explanation": "Checking readiness for an upcoming action.",
+      "hindi_formula": "क्या तुम + [verb] + करने के लिए तैयार हो?",
+      "telugu_formula": "నువ్వు + [verb] + చేయడానికి సిద్ధంగా ఉన్నావా?",
+      "examples": [
+        {
+          "english": "Are you ready to leave?",
+          "hindi": "क्या तुम निकलने के लिए तैयार हो?",
+          "telugu": "నువ్వు బయలుదేరడానికి సిద్ధంగా ఉన్నావా?"
+        },
+        {
+          "english": "Are you ready to join the meeting?",
+          "hindi": "क्या तुम मीटिंग जॉइन करने के लिए तैयार हो?",
+          "telugu": "నువ్వు మీటింగ్‌లో చేరడానికి సిద్ధంగా ఉన్నావా?"
+        }
+      ],
+      "practice_prompt": "Try building: 'Are you ready to eat?'"
+    }
+  ]
+}

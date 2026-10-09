@@ -1,0 +1,17 @@
+{
+  "name": "Hindi Assist",
+  "short_name": "Hindi Assist",
+  "description": "Privacy-first multilingual translation, communication assistance and language-learning platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

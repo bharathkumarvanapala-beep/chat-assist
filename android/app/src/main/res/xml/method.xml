@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<input-method xmlns:android="http://schemas.android.com/apk/res/android"
+    android:settingsActivity="com.hindiassist.settings.SettingsActivity"
+    android:isDefault="false"
+    android:supportsSwitchingToNextInputMethod="true">
+    <subtype
+        android:label="@string/subtype_en"
+        android:imeSubtypeLocale="en_IN"
+        android:imeSubtypeMode="keyboard" />
+    <subtype
+        android:label="@string/subtype_hi"
+        android:imeSubtypeLocale="hi_IN"
+        android:imeSubtypeMode="keyboard" />
+    <subtype
+        android:label="@string/subtype_te"
+        android:imeSubtypeLocale="te_IN"
+        android:imeSubtypeMode="keyboard" />
+</input-method>

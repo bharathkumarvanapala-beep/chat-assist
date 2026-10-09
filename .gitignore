@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+<<<<<<< HEAD
 .pnp
 .pnp.js
 
@@ -33,3 +34,24 @@ Thumbs.db
 *.iml
 .gradle/
 local.properties
+=======
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+>>>>>>> 5b2ea2dcebbf87f8e6491f9b47cbcf59eba39fd5

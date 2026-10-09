@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cat-greetings",
+    "name": "Greetings",
+    "type": "both",
+    "description": "Salutations, warm greetings, and polite farewells",
+    "isActive": true,
+    "sortOrder": 1,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-friends",
+    "name": "Friends",
+    "type": "both",
+    "description": "Casual conversations and friendly peer check-ins",
+    "isActive": true,
+    "sortOrder": 2,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-family",
+    "name": "Family",
+    "type": "both",
+    "description": "Warm familial expressions, respect, and home conversations",
+    "isActive": true,
+    "sortOrder": 3,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-work",
+    "name": "Work",
+    "type": "both",
+    "description": "Professional updates, schedule confirmations, and meetings",
+    "isActive": true,
+    "sortOrder": 4,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-travel",
+    "name": "Travel",
+    "type": "both",
+    "description": "Directions, transport check-ins, transit, and arrival times",
+    "isActive": true,
+    "sortOrder": 5,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-replies",
+    "name": "Common Replies",
+    "type": "phrasebook",
+    "description": "Everyday WhatsApp responses, confirmations, and quick answers",
+    "isActive": true,
+    "sortOrder": 6,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-important",
+    "name": "Important",
+    "type": "both",
+    "description": "High-priority, urgent notices, and crucial everyday phrases",
+    "isActive": true,
+    "sortOrder": 7,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-dailylife",
+    "name": "Daily Life",
+    "type": "vocabulary",
+    "description": "Household activities, routines, meals, and social habits",
+    "isActive": true,
+    "sortOrder": 8,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  },
+  {
+    "id": "cat-conversational",
+    "name": "Conversational",
+    "type": "both",
+    "description": "Natural fillers, transitions, and conversational nuances",
+    "isActive": true,
+    "sortOrder": 9,
+    "createdAt": "2026-10-01T00:00:00.000Z",
+    "updatedAt": "2026-10-08T09:30:00.000Z"
+  }
+]

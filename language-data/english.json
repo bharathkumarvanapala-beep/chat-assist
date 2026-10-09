@@ -1,0 +1,21 @@
+{
+  "language": "en",
+  "name": "English",
+  "words": [
+    { "word": "actually", "pos": "adverb", "frequency_rank": 1, "category": "Conversational" },
+    { "word": "probably", "pos": "adverb", "frequency_rank": 2, "category": "Conversational" },
+    { "word": "meeting", "pos": "noun", "frequency_rank": 3, "category": "Work" },
+    { "word": "tomorrow", "pos": "noun/adverb", "frequency_rank": 4, "category": "Time" },
+    { "word": "yesterday", "pos": "noun/adverb", "frequency_rank": 5, "category": "Time" },
+    { "word": "free", "pos": "adjective", "frequency_rank": 6, "category": "Status" },
+    { "word": "urgent", "pos": "adjective", "frequency_rank": 7, "category": "Work" },
+    { "word": "call", "pos": "verb/noun", "frequency_rank": 8, "category": "Communication" },
+    { "word": "message", "pos": "noun/verb", "frequency_rank": 9, "category": "Communication" },
+    { "word": "thanks", "pos": "interjection", "frequency_rank": 10, "category": "Greetings" },
+    { "word": "please", "pos": "adverb", "frequency_rank": 11, "category": "Politeness" },
+    { "word": "reach", "pos": "verb", "frequency_rank": 12, "category": "Travel" },
+    { "word": "wait", "pos": "verb", "frequency_rank": 13, "category": "Action" },
+    { "word": "send", "pos": "verb", "frequency_rank": 14, "category": "Action" },
+    { "word": "help", "pos": "verb/noun", "frequency_rank": 15, "category": "Support" }
+  ]
+}

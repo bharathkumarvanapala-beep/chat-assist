@@ -1,0 +1,256 @@
+{
+  "phrases": [
+    {
+      "id": "phrase-1",
+      "english": "Where are you?",
+      "hindi": "तुम कहाँ हो?",
+      "telugu": "నువ్వు ఎక్కడ ఉన్నావు?",
+      "category": "Friends",
+      "tone": "Casual",
+      "natural_hi": "तुम कहाँ हो?",
+      "literal_hi": "कहाँ तुम उपस्थित हो?",
+      "natural_te": "నువ్వు ఎక్కడ ఉన్నావు?",
+      "literal_te": "ఎక్కడ నువ్వు ఉన్నావు?",
+      "alternatives_hi": [
+        "तुम कहाँ हो?",
+        "कहाँ पर हो अभी?",
+        "किधर हो भाई?"
+      ],
+      "polite_hi": "आप कहाँ हैं?",
+      "polite_te": "మీరు ఎక్కడ ఉన్నారు?",
+      "grammar_breakdown": {
+        "Where": "कहाँ (interrogative location)",
+        "are": "हो (copula for 'tum')",
+        "you": "तुम (casual second person pronoun)"
+      },
+      "beginner_explanation": "Use 'तुम' (tum) with friends or peers. If speaking to an elder, mentor, or client, switch to polite 'आप' (aap) -> 'आप कहाँ हैं?'."
+    },
+    {
+      "id": "phrase-2",
+      "english": "Are you free now?",
+      "hindi": "क्या तुम अभी फ्री हो?",
+      "telugu": "నువ్వు ఇప్పుడు ఖాళీగా ఉన్నావా?",
+      "category": "Friends",
+      "tone": "Casual",
+      "natural_hi": "क्या तुम अभी फ्री हो?",
+      "literal_hi": "क्या तुम अभी स्वतंत्र हो?",
+      "natural_te": "నువ్వు ఇప్పుడు ఫ్రీయేనా?",
+      "literal_te": "నువ్వు ఇప్పుడు బంధవిముక్తుడివా?",
+      "alternatives_hi": [
+        "क्या तुम अभी फ्री हो?",
+        "अभी कुछ काम तो नहीं है ना?",
+        "क्या अभी बात हो सकती है?"
+      ],
+      "polite_hi": "क्या आप अभी उपलब्ध हैं?",
+      "polite_te": "మీరు ఇప్పుడు ఖాళీగా ఉన్నారా?",
+      "grammar_breakdown": {
+        "Are you": "क्या तुम ... हो (yes/no question marker 'क्या')",
+        "free": "फ्री / खाली (available in time)",
+        "now": "अभी (at this current moment)"
+      },
+      "beginner_explanation": "Never translate 'free' as 'स्वतंत्र' when asking about someone's schedule. In modern chats, 'फ्री' (free) is the most natural term."
+    },
+    {
+      "id": "phrase-3",
+      "english": "I am at home right now.",
+      "hindi": "मैं अभी घर पर हूँ।",
+      "telugu": "నేను ఇప్పుడు ఇంట్లోనే ఉన్నాను.",
+      "category": "Common Replies",
+      "tone": "Casual",
+      "natural_hi": "मैं अभी घर पर हूँ।",
+      "literal_hi": "मैं हूँ अभी घर पर।",
+      "natural_te": "నేను ప్రస్తుతం ఇంట్లోనే ఉన్నాను.",
+      "literal_te": "నేను ఉన్నాను ఇప్పుడు ఇల్లు మీద.",
+      "alternatives_hi": [
+        "मैं अभी घर पर हूँ।",
+        "फिलहाल घर पर ही हूँ।",
+        "अभी घर पे हूँ, बोलो।"
+      ],
+      "polite_hi": "मैं इस समय घर पर हूँ।",
+      "polite_te": "నేను ప్రస్తుతం ఇంట్లో ఉన్నాను సర్.",
+      "grammar_breakdown": {
+        "I": "मैं (first person pronoun)",
+        "am": "हूँ (verb 'to be' for first person)",
+        "at home": "घर पर (postposition 'पर' indicates location)",
+        "right now": "अभी (emphasized current time)"
+      },
+      "beginner_explanation": "Hindi is an SOV (Subject - Object - Verb) language. The verb 'हूँ' (am) naturally comes at the end of the sentence."
+    },
+    {
+      "id": "phrase-4",
+      "english": "Why didn't you come yesterday?",
+      "hindi": "तुम कल क्यों नहीं आए?",
+      "telugu": "నువ్వు నిన్న ఎందుకు రాలేదు?",
+      "category": "Friends",
+      "tone": "Casual",
+      "natural_hi": "तुम कल क्यों नहीं आए?",
+      "literal_hi": "क्यों नहीं तुमने किया आना कल?",
+      "natural_te": "నువ్వు నిన్న ఎందుకు రాలేదు బ్రో?",
+      "literal_te": "ఎందుకు కాదు నువ్వు వచ్చినది నిన్న?",
+      "alternatives_hi": [
+        "तुम कल क्यों नहीं आए?",
+        "कल आए क्यों नहीं तुम?",
+        "कल क्या हुआ, दिखे नहीं?"
+      ],
+      "polite_hi": "आप कल क्यों नहीं आए?",
+      "polite_te": "మీరు నిన్న ఎందుకు రాలేదు?",
+      "grammar_breakdown": {
+        "Why": "क्यों (interrogative reason)",
+        "didn't ... come": "नहीं आए (past negative form of verb 'आना')",
+        "yesterday": "कल (in Hindi, 'कल' means yesterday or tomorrow based on verb tense)"
+      },
+      "beginner_explanation": "'कल' (kal) stands for both yesterday and tomorrow! The past verb 'आए' tells us it refers to yesterday."
+    },
+    {
+      "id": "phrase-5",
+      "english": "Take care.",
+      "hindi": "अपना ख्याल रखना।",
+      "telugu": "జాగ్రత్తగా ఉండు.",
+      "category": "Greetings",
+      "tone": "Friendly",
+      "natural_hi": "अपना ख्याल रखना।",
+      "literal_hi": "ध्यान रखना।",
+      "natural_te": "జాగ్రత్తగా ఉండు.",
+      "literal_te": "శ్రద్ధ తీసుకో.",
+      "alternatives_hi": [
+        "अपना ख्याल रखना।",
+        "ख्याल रखो अपना।",
+        "टेक केयर!"
+      ],
+      "polite_hi": "आप अपना ध्यान रखिएगा।",
+      "polite_te": "మీరు జాగ్రత్తగా ఉండండి.",
+      "grammar_breakdown": {
+        "Take care": "अपना ख्याल रखना (idiomatic warm farewell expression)",
+        "अपना": "self / one's own",
+        "ख्याल": "care / health / well-being"
+      },
+      "beginner_explanation": "'अपना ख्याल रखना' conveys personal warmth and care, ideal for ending conversations with friends or family."
+    },
+    {
+      "id": "phrase-6",
+      "english": "I will call you tomorrow.",
+      "hindi": "मैं तुम्हें कल कॉल करूँगा।",
+      "telugu": "నేను రేపు నీకు కాల్ చేస్తాను.",
+      "category": "Work",
+      "tone": "Casual",
+      "natural_hi": "मैं तुम्हें कल कॉल करूँगा।",
+      "literal_hi": "मैं करूँगा कॉल तुम्हें कल।",
+      "natural_te": "నేను రేపు మార్నింగ్ కాల్ చేస్తాను.",
+      "literal_te": "నేను నీకు పిలుపు చేస్తాను రేపు.",
+      "alternatives_hi": [
+        "मैं तुम्हें कल कॉल करूँगा।",
+        "कल बात करता हूँ तुमसे।",
+        "कल फोन लगाता हूँ।"
+      ],
+      "polite_hi": "मैं आपको कल कॉल करूँगा।",
+      "polite_te": "నేను రేపు మీకు కాల్ చేస్తాను.",
+      "grammar_breakdown": {
+        "I": "मैं",
+        "will call": "कॉल करूँगा (masculine future) / कॉल करूँगी (feminine future)",
+        "you": "तुम्हें (accusative)",
+        "tomorrow": "कल (future time)"
+      },
+      "beginner_explanation": "Notice 'कॉल करना' pairs the English word 'call' with Hindi verb 'करना' (karna). This is standard modern conversational Hindi."
+    },
+    {
+      "id": "phrase-7",
+      "english": "Can you come tomorrow?",
+      "hindi": "क्या तुम कल आ सकते हो?",
+      "telugu": "నువ్వు రేపు రాగలవా?",
+      "category": "Common Replies",
+      "tone": "Casual",
+      "natural_hi": "क्या तुम कल आ सकते हो?",
+      "literal_hi": "क्या सकोगे आना तुम कल?",
+      "natural_te": "రేపు రాగలవా నువ్వు?",
+      "literal_te": "నువ్వు రేపు రాగలవా?",
+      "alternatives_hi": [
+        "क्या तुम कल आ सकते हो?",
+        "कल आना हो पाएगा?",
+        "कल आ रहे हो क्या?"
+      ],
+      "polite_hi": "क्या आप कल आ सकेंगे?",
+      "polite_te": "మీరు రేపు రాగలరా?",
+      "grammar_breakdown": {
+        "Can you": "क्या तुम ... सकते हो (modal ability)",
+        "come": "आ (root verb 'आना')",
+        "tomorrow": "कल"
+      },
+      "beginner_explanation": "Modal 'can' is expressed with 'सकना' (sakna). Conjugated as 'सकते हो' for 'तुम'."
+    },
+    {
+      "id": "phrase-8",
+      "english": "When will you reach?",
+      "hindi": "तुम कब पहुँचोगे?",
+      "telugu": "నువ్వు ఎప్పుడు చేరుకుంటావు?",
+      "category": "Travel",
+      "tone": "Casual",
+      "natural_hi": "तुम कब पहुँचोगे?",
+      "literal_hi": "तुम किस समय प्राप्त करोगे?",
+      "natural_te": "ఎప్పుడు వస్తావు / చేరుకుంటావు?",
+      "literal_te": "నువ్వు ఎప్పుడు చేరుకుంటావు?",
+      "alternatives_hi": [
+        "तुम कब पहुँचोगे?",
+        "कितनी देर में पहुँच रहे हो?",
+        "कब तक आओगे?"
+      ],
+      "polite_hi": "आप कब तक पहुँचेंगे?",
+      "polite_te": "మీరు ఎప్పుడు చేరుకుంటారు?",
+      "grammar_breakdown": {
+        "When": "कब (time query)",
+        "will reach": "पहुँचोगे (future verb form of 'पहुँचना')",
+        "you": "तुम"
+      },
+      "beginner_explanation": "In travel chats, 'कितनी देर में पहुँच रहे हो?' (In how much time are you arriving?) is also very common."
+    },
+    {
+      "id": "phrase-9",
+      "english": "Please send the file.",
+      "hindi": "कृपया फाइल भेज दीजिए।",
+      "telugu": "దయచేసి ఫైల్ పంపించండి.",
+      "category": "Work",
+      "tone": "Polite",
+      "natural_hi": "फाइल भेज देना प्लीज।",
+      "literal_hi": "कृपया दस्तावेज प्रेषित करें।",
+      "natural_te": "ఫైల్ సెండ్ చేయండి ప్లీజ్.",
+      "literal_te": "దయచేసి దస్త్రము పంపించుము.",
+      "alternatives_hi": [
+        "फाइल भेज देना प्लीज।",
+        "कृपया फाइल भेज दीजिए।",
+        "फाइल शेयर कर दो भाई।"
+      ],
+      "polite_hi": "कृपया फाइल भेज दीजिए।",
+      "polite_te": "దయచేసి ఫైల్ పంపించండి.",
+      "grammar_breakdown": {
+        "Please": "कृपया / प्लीज",
+        "send": "भेज दीजिए (polite imperative of 'भेजना')",
+        "the file": "फाइल"
+      },
+      "beginner_explanation": "In Indian work chats, combining 'फाइल' with polite suffix 'दीजिए' creates a professional yet approachable tone."
+    },
+    {
+      "id": "phrase-10",
+      "english": "I will let you know soon.",
+      "hindi": "मैं तुम्हें जल्दी ही बताता हूँ।",
+      "telugu": "నేను త్వరలోనే నీకు తెలియజేస్తాను.",
+      "category": "Work",
+      "tone": "Casual",
+      "natural_hi": "मैं तुम्हें जल्दी बताता हूँ।",
+      "literal_hi": "मैं जानने दूँगा तुम्हें शीघ्र।",
+      "natural_te": "నేను త్వరలో చెప్తాను.",
+      "literal_te": "నేను నిన్ను తెలియనిస్తాను త్వరలో.",
+      "alternatives_hi": [
+        "मैं तुम्हें जल्दी बताता हूँ।",
+        "थोड़ी देर में अपडेट करता हूँ।",
+        "पता करके बताता हूँ।"
+      ],
+      "polite_hi": "मैं आपको जल्द ही सूचित करूँगा।",
+      "polite_te": "నేను త్వరలోనే మీకు తెలియజేస్తాను.",
+      "grammar_breakdown": {
+        "I": "मैं",
+        "will let you know": "बताता हूँ / इन्फॉर्म करता हूँ",
+        "soon": "जल्दी ही (soon / shortly)"
+      },
+      "beginner_explanation": "'Let you know' translates naturally to 'बताता हूँ' (I will tell), rather than a clunky causative construction."
+    }
+  ]
+}
